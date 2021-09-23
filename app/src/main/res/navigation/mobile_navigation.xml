@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_finicio">
+    <fragment
+        android:id="@+id/nav_fgen_codigo"
+        android:name="com.example.encargalo.nav_fgen_codigo"
+        android:label="Generar codigo"
+        tools:layout="@layout/fragment_nav_fgen_codigo" />
+    <fragment
+        android:id="@+id/nav_frepartidor"
+        android:name="com.example.encargalo.nav_frepartidor"
+        android:label="REPARTIDOR"
+        tools:layout="@layout/fragment_nav_frepartidor" />
+    <fragment
+        android:id="@+id/nav_fmyperfil"
+        android:name="com.example.encargalo.nav_myperfil"
+        android:label="MI PERFIL"
+        tools:layout="@layout/fragment_nav_myperfil" />
+    <fragment
+        android:id="@+id/nav_finicio"
+        android:name="com.example.encargalo.nav_FInicio"
+        android:label="INICIO"
+        tools:layout="@layout/fragment_nav__f_inicio" />
+    <fragment
+        android:id="@+id/nav_fmypedidos"
+        android:name="com.example.encargalo.nav_fmypedidos"
+        android:label="MIS PEDIDOS"
+        tools:layout="@layout/fragment_nav_fmypedidos" />
+    <fragment
+        android:id="@+id/nav_fmyproductos"
+        android:name="com.example.encargalo.nav_fmyproductos"
+        android:label="MIS PRODUCTOS"
+        tools:layout="@layout/fragment_nav_fmyproductos" />
+    <fragment
+        android:id="@+id/nav_fmyestadisticas"
+        android:name="com.example.encargalo.nav_fmyestadisticas"
+        android:label="ESTADÍSTICAS"
+        tools:layout="@layout/fragment_nav_fmyestadisticas" />
+    <fragment
+        android:id="@+id/nav_fmynotificaciones"
+        android:name="com.example.encargalo.nav_fmynotificaciones"
+        android:label="NOTIFICACIONES"
+        tools:layout="@layout/fragment_nav_fmynotificaciones" />
+    <fragment
+        android:id="@+id/nav_ajustes"
+        android:name="com.example.encargalo.nav_ajustes"
+        android:label="AJUSTES"
+        tools:layout="@layout/fragment_nav_ajustes" />
+    <fragment
+        android:id="@+id/nav_calificacion"
+        android:name="com.example.encargalo.nav_calificacion"
+        android:label="Calificacion"
+        tools:layout="@layout/fragment_nav_calificacion" />
+</navigation>

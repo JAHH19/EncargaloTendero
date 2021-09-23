@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".nav_fmyproductos"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_carnes"
+                android:text="CARNES"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_reposteria"
+                android:text="REPOSTERIA"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_lacteos"
+                android:text="LACTEOS"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_mascotas"
+                android:text="MASCOTAS"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_frutas_y_verduras"
+                android:text="FRUTAS Y VERDURAS"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_bebidas"
+                android:text="BEBIDAS"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_antibioticos"
+                android:text="ANTIBIOTICOS"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_medicos"
+                android:text="DISPOSITIVOS MEDICOS"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_desinflamantes"
+                android:text="DOLOR E INFLAMACIÓN"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_mayores"
+                android:text="ADULTO MAYOR"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_belleza"
+                android:text="BELLEZA"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_cuidado"
+                android:text="CUIDADO PERSONAL"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_capilar"
+                android:text="CUIDADO CAPILAR"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_piel"
+                android:text="DERMOCOSMÉTICA"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_nutricion"
+                android:text="NUTRICIÓN"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button16"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_femenino"
+                android:text="CUIDADO FEMENINO"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button17"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/f_bebes"
+                android:text="BEBÉS Y NIÑOS"
+                android:textSize="50sp"
+                android:textColor="@color/azul_300"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_flat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/cardview_dark_background"
+        android:src="@drawable/ic_f_mas" />
+
+</FrameLayout>

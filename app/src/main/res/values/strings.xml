@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Tendero</string>
+    <string name="title_activity_iniciomenu">iniciomenu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    //datos
+
+    <string name="idusuario_almacenado">x</string>
+
+    <string name="menu_inicio">Inicio</string>
+    <string name="menu_perfil">Mi perfil</string>
+    <string name="menu_pedidos">Mis pedidos</string>
+    <string name="menu_productos">Mis productos</string>
+    <string name="menu_estadisticas">Estadísticas</string>
+    <string name="menu_notificaciones">Notificaciones</string>
+    <string name="menu_repartidor">Repartidor</string>
+    <string name="menu_ajustes">Ajustes</string>
+    <string name="menu_calificacion">Calificación</string>
+    <string name="menu_codigo">Generar Codigo</string>
+
+    <!-- LOGIN -->
+    <string name="olvidaste_tu_contraseña">¿Olvidaste tu Contraseña?</string>
+    <string name="hint_usuario">Usuario o numero de celular</string>
+    <string name="hint_contraseña">Contraseña</string>
+    <string name="Ingresar_con_huella">Ingresar con huella</string>
+
+
+    <!-- BUTTON -->
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_crear_cuenta">Crear Cuenta</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="generar_codigo">Generar Codigo</string>
+</resources>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".RegistroActivity">
+
+    <include
+        android:id="@+id/include_toolbar"
+        layout="@layout/custom_toolbar"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include_toolbar"
+        android:layout_marginVertical="10dp"
+        android:layout_marginTop="-18dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/logo_encargalo" />
+
+            <TextView
+                android:id="@+id/textView001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*Apellido paterno" />
+
+            <EditText
+                android:id="@+id/txtappaterno"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/editex_forma_cuadrada"
+                android:ems="10"
+                android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView00112"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*Apellido materno" />
+
+            <EditText
+                android:id="@+id/txtapmaterno"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/editex_forma_cuadrada"
+                android:ems="10"
+                android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView00111"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*Nombres" />
+
+            <EditText
+                android:id="@+id/txtnombre"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/editex_forma_cuadrada"
+                android:ems="10"
+                android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView002"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="*Número de identidad" />
+
+            <EditText
+                android:id="@+id/txtidentidad"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/editex_forma_cuadrada"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView003"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="*Número de celular" />
+
+            <EditText
+                android:id="@+id/txtcelular"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/editex_forma_cuadrada"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView004"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="*Nombre de la tienda" />
+
+            <EditText
+                android:id="@+id/txttienda"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/editex_forma_cuadrada"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView005"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="*RUC de la tienda" />
+
+            <EditText
+                android:id="@+id/txtruc"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/editex_forma_cuadrada"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView006"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="*Rubro de la tienda" />
+
+            <EditText
+                android:id="@+id/txtrubro"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/editex_forma_cuadrada"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView007"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:text="*Dirección" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapa"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+
+            <CheckBox
+                android:id="@+id/check1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acepto términos y condiciones" />
+
+            <CheckBox
+                android:id="@+id/check2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acepto politica de uso de datos" />
+
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="15dp"
+                android:background="@drawable/btn_bg_azul_100"
+                android:onClick="registrar_datos"
+                android:text="Siguiente"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
