@@ -79,9 +79,9 @@ public class InicioMenuActivity extends AppCompatActivity implements Response.Er
         navigationView.setItemIconTintList(null);
 
         View headView = navigationView.getHeaderView(0);
-        TextView tusuario = headView.findViewById(R.id.navhusuario);
-        TextView ttienda = headView.findViewById(R.id.navhtienda);
-        tusuario.setText(appaterno+" "+apmaterno+" "+nombre);
+       TextView tusuario = headView.findViewById(R.id.navhusuario);
+       TextView ttienda = headView.findViewById(R.id.navhtienda);
+      tusuario.setText(appaterno+" "+apmaterno+" "+nombre);
 
         ttienda.setText(tienda);
         Idtienda(usuario);

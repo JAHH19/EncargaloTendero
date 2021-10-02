@@ -26,7 +26,10 @@
         <activity
             android:name=".InicioMenuActivity"
             android:label="@string/title_activity_iniciomenu"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
         <activity android:name=".VerificarActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".LoginActivity" />
@@ -37,6 +40,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity android:name=".vespass" />
     </application>
 
