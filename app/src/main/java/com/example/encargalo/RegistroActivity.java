@@ -125,16 +125,16 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     public void registrar_datos(View View){
-            Intent i = new Intent(this, VerificarActivity.class);
-            i.putExtra("appaterno",appaterno.getText().toString());
-            i.putExtra("apmaterno",apmaterno.getText().toString());
-            i.putExtra("nombres",nombre.getText().toString());
-            i.putExtra("identidad",identidad.getText().toString());
-            i.putExtra("celular",celular.getText().toString());
-            i.putExtra("tienda",tienda.getText().toString());
-            i.putExtra("ruc",ruc.getText().toString());
-            i.putExtra("rubro",rubro.getText().toString());
-            startActivity(i);
+        Intent i = new Intent(this, VerificarActivity.class);
+        i.putExtra("appaterno",appaterno.getText().toString());
+        i.putExtra("apmaterno",apmaterno.getText().toString());
+        i.putExtra("nombres",nombre.getText().toString());
+        i.putExtra("identidad",identidad.getText().toString());
+        i.putExtra("celular",celular.getText().toString());
+        i.putExtra("tienda",tienda.getText().toString());
+        i.putExtra("ruc",ruc.getText().toString());
+        i.putExtra("rubro",rubro.getText().toString());
+        startActivity(i);
     }
 
 }

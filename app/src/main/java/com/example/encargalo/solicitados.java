@@ -49,7 +49,7 @@ public class solicitados extends AppCompatActivity implements Response.Listener<
     }
 
     private void initValues(){
-        String URL = "http://"+Valores.getIP_SERVER()+"/APIS/tienda/listarSolicitudestendero.php?idtienda="+idtienda;
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/listarSolicitudestendero.php?idtienda="+idtienda;
         request = Volley.newRequestQueue(this);
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL,null, this,this);
         request.add(jsonObjectRequest);

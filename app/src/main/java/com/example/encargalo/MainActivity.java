@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
@@ -25,6 +26,10 @@ import com.example.encargalo.InicioMenuActivity;
 import com.example.encargalo.LoginActivity;
 import com.example.encargalo.R;
 import com.example.encargalo.RegistroActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.internal.FirebaseInstanceIdInternal;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthenticationSucceeded(@NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
                 Toast.makeText(MainActivity.this, "¡Autenticación exitosa!", Toast.LENGTH_SHORT).show();
-                validarUsuario("http://"+Valores.getIP_SERVER()+"/APIS/tienda/validarusuario.php");
+                validarUsuario(Valores.getIP_SERVER()+"/APIS/tienda/validarusuario.php");
             }
 
             @Override
@@ -90,7 +95,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        notifcationSend();
     }
+
+    public void notifcationSend()
+    {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("error", "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+                        // Get new FCM registration token
+                        String token = task.getResult();
+
+                        SharedPreferences.Editor editor = getSharedPreferences("data_user", MODE_PRIVATE).edit();
+                        editor.putString("token_app", token);
+                        editor.apply();
+                    }
+                });
+    }
+
     public void iralogin (){
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);

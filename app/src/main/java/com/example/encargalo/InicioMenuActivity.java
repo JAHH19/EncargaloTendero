@@ -85,11 +85,6 @@ public class InicioMenuActivity extends AppCompatActivity implements Response.Er
 
         ttienda.setText(tienda);
         Idtienda(usuario);
-        idtienda="1";
-        Bundle bundle = new Bundle();
-        bundle.putString("codigotienda",idtienda);
-        nav_fmyestadisticas estats = new nav_fmyestadisticas();
-        estats.setArguments(bundle);
     }
 
     @Override
@@ -97,7 +92,6 @@ public class InicioMenuActivity extends AppCompatActivity implements Response.Er
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.iniciomenu, menu);
         Idtienda(usuario);
-
         return true;
     }
 
@@ -110,7 +104,7 @@ public class InicioMenuActivity extends AppCompatActivity implements Response.Er
 
     }
     public void Idtienda(String user){
-        String URL = "http://"+Valores.getIP_SERVER()+"/APIS/tienda/Consultatendero.php?idusuario="+user;
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/Consultatendero.php?idusuario="+user;
         request = Volley.newRequestQueue(this);
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL,null,this,this);
         request.add(jsonObjectRequest);
@@ -128,9 +122,6 @@ public class InicioMenuActivity extends AppCompatActivity implements Response.Er
         try {
             jsonObject = json.getJSONObject(0);
             idtienda = jsonObject.getString("idtienda");
-
-
-
             Toast.makeText(this,"idtienda : "+idtienda,Toast.LENGTH_SHORT).show();
 
             SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
