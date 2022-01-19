@@ -44,7 +44,7 @@ public class detalle_pedido extends AppCompatActivity implements Response.Listen
     private List<itemdetallepedido> items;
     JsonObjectRequest jsonObjectRequest;
     RequestQueue request;
-
+    //comentario
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
