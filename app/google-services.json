@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "19664316722",
+    "project_id": "encargalotendero",
+    "storage_bucket": "encargalotendero.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19664316722:android:f3e726ae41ae051043cf2b",
+        "android_client_info": {
+          "package_name": "com.example.encargalo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19664316722-v841et0i3f1g964nuinei79n87jln37p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9KXcN5YqMpygpgitLDjl4guD7DELixVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19664316722-v841et0i3f1g964nuinei79n87jln37p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

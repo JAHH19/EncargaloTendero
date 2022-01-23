@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/buttonpromocionarproduc"
+        android:layout_width="295dp"
+        android:layout_height="85dp"
+        android:background="@color/azul_200"
+        android:foreground="@drawable/btn_base_bg_azul_100_underline"
+        android:freezesText="true"
+        android:text="PROMOCIÓN"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="24sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="123dp" />
+
+    <Button
+        android:id="@+id/buttonmapacalor"
+        android:layout_width="295dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/azul_200"
+        android:text="MAPA DE CALOR"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonpromocionarproduc" />
+
+    <Button
+        android:id="@+id/buttoninformacion"
+        android:layout_width="295dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/azul_200"
+        android:text="ESTADÍSTICAS"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonmapacalor" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,7 +53,7 @@ public class Productos extends AppCompatActivity implements Response.Listener<JS
     }
 
     private void initValues(){
-        String URL = "http://"+Valores.getIP_SERVER()+"/APIS/tienda/MostrarProductosUsuCat.php?idusuario="+usuario+"&idcategoria="+cate;
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/MostrarProductosUsuCat.php?idusuario="+usuario+"&idcategoria="+cate;
         request = Volley.newRequestQueue(this);
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL,null, this,this);
         request.add(jsonObjectRequest);

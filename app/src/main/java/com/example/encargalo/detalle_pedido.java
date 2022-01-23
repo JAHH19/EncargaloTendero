@@ -94,7 +94,7 @@ public class detalle_pedido extends AppCompatActivity implements Response.Listen
 
     private void initValues(){
 
-        String URL = "http://"+Valores.getIP_SERVER()+"/APIS/tienda/Detallepedidotienda.php?idpedido="+idped;
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/Detallepedidotienda.php?idpedido="+idped;
         request = Volley.newRequestQueue(this);
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL,null, this,this);
         request.add(jsonObjectRequest);
@@ -133,7 +133,7 @@ public class detalle_pedido extends AppCompatActivity implements Response.Listen
 
     private void actualizar_pedido(String estado){
         final String est = estado;
-        String URL = "http://"+Valores.getIP_SERVER()+"/APIS/tienda/AceptarRechazarPedidotendero.php";
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/AceptarRechazarPedidotendero.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

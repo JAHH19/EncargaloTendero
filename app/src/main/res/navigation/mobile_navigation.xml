@@ -54,9 +54,4 @@
         android:name="com.example.encargalo.nav_calificacion"
         android:label="Calificacion"
         tools:layout="@layout/fragment_nav_calificacion" />
-    <fragment
-        android:id="@+id/nav_heatmap"
-        android:name="com.example.encargalo.MapaCalorFragment"
-        android:label="Calificacion"
-        tools:layout="@layout/fragment_mapa_calor" />
 </navigation>

@@ -49,7 +49,7 @@ public class historial extends AppCompatActivity implements  Response.Listener<J
     }
 
     private void initValues(){
-        String URL = "http://"+Valores.getIP_SERVER()+"/APIS/tienda/listarsolicitudesAceptadasTendero.php?idtienda="+idtienda;
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/listarsolicitudesAceptadasTendero.php?idtienda="+idtienda;
         request = Volley.newRequestQueue(this);
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL,null, this,this);
         request.add(jsonObjectRequest);

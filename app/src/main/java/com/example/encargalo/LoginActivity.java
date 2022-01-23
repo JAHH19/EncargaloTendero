@@ -3,6 +3,7 @@ package com.example.encargalo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -32,6 +33,7 @@ public class LoginActivity extends AppCompatActivity implements Response.ErrorLi
     Button btnlogin;
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
+    String token_app;
     public String usuario="0",nombre="0",appaterno="0",apmaterno="0",tienda="0";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +61,22 @@ public class LoginActivity extends AppCompatActivity implements Response.ErrorLi
         });
 
         btnlogin =findViewById(R.id.btn_ingresar);
+
+        SharedPreferences prefs = getSharedPreferences("data_user", MODE_PRIVATE);
+        token_app = prefs.getString("token_app", "vacio");
     }
     private  void validarUsuario(String usu){
-        String URL = "http://"+Valores.getIP_SERVER()+"/APIS/tienda/validarusuario.php";
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/validarusuario.php";
         extraer();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 extraer();
+                /*Toast.makeText(LoginActivity.this,"¡URL!"+URL,Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,"¡usuario!"+edtUsuario.getText().toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,"¡password!"+edtPassword.getText().toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,"¡token!"+token_app,Toast.LENGTH_SHORT).show();*/
+
                 if(!response.isEmpty()){
                     Intent i = new Intent(getApplicationContext(), InicioMenuActivity.class);
                     i.putExtra("usuario",edtUsuario.getText().toString());
@@ -74,10 +84,13 @@ public class LoginActivity extends AppCompatActivity implements Response.ErrorLi
                     i.putExtra("appaterno",appaterno);
                     i.putExtra("apmaterno",apmaterno);
                     i.putExtra("tienda",tienda);
+                    SharedPreferences.Editor editor = getSharedPreferences("data_user", MODE_PRIVATE).edit();
+                    editor.putString("value_user", edtUsuario.getText().toString());
+                    editor.apply();
                     startActivity(i);
                     Toast.makeText(LoginActivity.this,"¡Bienvenido!",Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(LoginActivity.this,"Usuario o contraseña incorrecta",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Usuario o contraseña incorrecta..."+response,Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
@@ -91,6 +104,7 @@ public class LoginActivity extends AppCompatActivity implements Response.ErrorLi
                 Map<String,String> parametros = new HashMap<String, String>();
                 parametros.put("usuario",edtUsuario.getText().toString());
                 parametros.put("password",edtPassword.getText().toString());
+                parametros.put("token_app",token_app);
                 return parametros;
             }
         };
@@ -102,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements Response.ErrorLi
         edtUsuario=findViewById(R.id.txtusuario);
         edtPassword=findViewById(R.id.txtclave);
         String user = edtUsuario.getText().toString();
-        String URL = "http://"+Valores.getIP_SERVER()+"/APIS/tienda/Consultatendero.php?idusuario="+user;
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/Consultatendero.php?idusuario="+user;
         request = Volley.newRequestQueue(this);
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL,null,this,this);
         request.add(jsonObjectRequest);

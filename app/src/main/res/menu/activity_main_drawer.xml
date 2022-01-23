@@ -27,7 +27,7 @@
             android:id="@+id/nav_fmyestadisticas"
             android:icon="@drawable/ic_estadistica"
             android:iconTint="@android:color/white"
-            android:title="@string/menu_estadisticas" />
+            android:title="@string/menu_marketing" />
         <item
             android:id="@+id/nav_fmynotificaciones"
             android:icon="@drawable/ic_notificacion"

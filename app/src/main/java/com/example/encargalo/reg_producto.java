@@ -55,7 +55,7 @@ public class reg_producto extends AppCompatActivity {
 
     }
     private void ejecutarServicio(final String idtien){
-        String URL="http://"+Valores.getIP_SERVER()+"/APIS/tienda/registroProducto.php";
+        String URL=Valores.getIP_SERVER()+"/APIS/tienda/registroProducto.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

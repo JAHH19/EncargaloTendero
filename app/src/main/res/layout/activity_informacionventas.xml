@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MasVendidoCategoriaActivity"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/re_mvc2"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_estadistica_rpt2"
+        tools:layout_editor_absoluteX="0dp"></androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tv_estadistica_rpt2"
+        android:layout_width="171dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:hint="..."
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_estadistica_buscar2"></TextView>
+
+    <TextView
+        android:id="@+id/printfechafinTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="8dp"
+        android:text="DD/MM/AA"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/fincalendarioImageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/finfechaTextView2"
+        />
+
+    <TextView
+        android:id="@+id/finfechaTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Hasta:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/printfechainiTextView2"
+        tools:layout_editor_absoluteY="79dp" />
+
+    <TextView
+        android:id="@+id/printfechainiTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="DD/MM/AA"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/iniciocalendarioImageView2"
+        app:layout_constraintStart_toEndOf="@+id/iniciofechaTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.433" />
+
+    <TextView
+        android:id="@+id/iniciofechaTextView2"
+        android:layout_width="26dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="96dp"
+        android:text="De:"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/iniciocalendarioImageView2"
+        app:layout_constraintStart_toEndOf="@+id/sp_estadistica_tipo2" />
+
+    <Spinner
+        android:id="@+id/sp_estadistica_tipo2"
+        android:layout_width="147dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+    <ImageView
+        android:id="@+id/fincalendarioImageView2"
+        android:layout_width="39dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginEnd="48dp"
+        android:onClick="finfecha_boton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintStart_toEndOf="@+id/iniciocalendarioImageView2"
+        app:srcCompat="@mipmap/iconocalendario"
+        tools:layout_editor_absoluteY="132dp" />
+
+    <ImageView
+        android:id="@+id/iniciocalendarioImageView2"
+        android:layout_width="42dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="200dp"
+        android:onClick="inifecha_boton"
+        app:layout_constraintBottom_toTopOf="@+id/btn_estadistica_buscar2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/iconocalendario" />
+
+    <Button
+        android:id="@+id/btn_estadistica_buscar2"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="#000"
+        android:text="BUSCAR"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="229dp"></Button>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/degradado_toolbar"
+        android:fitsSystemWindows="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="#fff" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
