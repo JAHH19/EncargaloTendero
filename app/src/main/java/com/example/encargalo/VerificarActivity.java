@@ -6,7 +6,6 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -52,9 +51,6 @@ public class VerificarActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                SharedPreferences.Editor editor = getSharedPreferences("data_user", MODE_PRIVATE).edit();
-                editor.putString("value_user", usuario.getText().toString());
-                editor.apply();
                 Toast.makeText(getApplicationContext(), "OPERACION EXITOSA", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {

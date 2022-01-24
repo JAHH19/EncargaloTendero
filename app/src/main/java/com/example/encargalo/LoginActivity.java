@@ -42,13 +42,23 @@ public class LoginActivity extends AppCompatActivity implements Response.ErrorLi
         Button btnIngresar = findViewById(R.id.btn_ingresar);
         Button btnCrearCuenta = findViewById(R.id.btn_crear_cuenta);
 
+        edtUsuario=findViewById(R.id.txtusuario);
+        edtPassword=findViewById(R.id.txtclave);
+
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                while (tienda!="0"){
-                    extraer();
+                if(edtUsuario.getText().toString().isEmpty())
+                {
+                    Toast.makeText(LoginActivity.this,"Campo usuario se encuentra vacio.",Toast.LENGTH_SHORT).show();
+                } else {
+                    if(edtPassword.getText().toString().isEmpty())
+                    {
+                        Toast.makeText(LoginActivity.this,"Campo contraseña se encuentra vacio.",Toast.LENGTH_SHORT).show();
+                    } else {
+                        validarUsuario();
+                    }
                 }
-                validarUsuario(usuario);
             }
         });
 
@@ -65,38 +75,44 @@ public class LoginActivity extends AppCompatActivity implements Response.ErrorLi
         SharedPreferences prefs = getSharedPreferences("data_user", MODE_PRIVATE);
         token_app = prefs.getString("token_app", "vacio");
     }
-    private  void validarUsuario(String usu){
-        String URL = Valores.getIP_SERVER()+"/APIS/tienda/validarusuario.php";
-        extraer();
+    private  void validarUsuario(){
+        String URL = Valores.getIP_SERVER()+"/backend/public/api/login";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                extraer();
-                /*Toast.makeText(LoginActivity.this,"¡URL!"+URL,Toast.LENGTH_SHORT).show();
-                Toast.makeText(LoginActivity.this,"¡usuario!"+edtUsuario.getText().toString(),Toast.LENGTH_SHORT).show();
-                Toast.makeText(LoginActivity.this,"¡password!"+edtPassword.getText().toString(),Toast.LENGTH_SHORT).show();
-                Toast.makeText(LoginActivity.this,"¡token!"+token_app,Toast.LENGTH_SHORT).show();*/
-
                 if(!response.isEmpty()){
-                    Intent i = new Intent(getApplicationContext(), InicioMenuActivity.class);
-                    i.putExtra("usuario",edtUsuario.getText().toString());
-                    i.putExtra("nombre",nombre);
-                    i.putExtra("appaterno",appaterno);
-                    i.putExtra("apmaterno",apmaterno);
-                    i.putExtra("tienda",tienda);
-                    SharedPreferences.Editor editor = getSharedPreferences("data_user", MODE_PRIVATE).edit();
-                    editor.putString("value_user", edtUsuario.getText().toString());
-                    editor.apply();
-                    startActivity(i);
-                    Toast.makeText(LoginActivity.this,"¡Bienvenido!",Toast.LENGTH_SHORT).show();
+                    try {
+                        JSONObject json= new JSONObject(response);
+                        String usuario = json.getString("usuario");
+                        String nombre = json.getString("nombre");
+                        String appaterno = json.getString("appaterno");
+                        String apmaterno = json.getString("apmaterno");
+                        String tienda = json.getString("tienda");
+
+                        Intent i = new Intent(getApplicationContext(), InicioMenuActivity.class);
+                        i.putExtra("usuario",usuario);
+                        i.putExtra("nombre",nombre);
+                        i.putExtra("appaterno",appaterno);
+                        i.putExtra("apmaterno",apmaterno);
+                        i.putExtra("tienda",tienda);
+                        SharedPreferences.Editor editor = getSharedPreferences("data_user", MODE_PRIVATE).edit();
+                        editor.putString("value_user", edtUsuario.getText().toString());
+                        editor.apply();
+                        startActivity(i);
+                        Toast.makeText(LoginActivity.this,"¡Bienvenido!",Toast.LENGTH_SHORT).show();
+
+                    } catch (JSONException e) {
+                        Toast.makeText(LoginActivity.this,"Usuario o contraseña incorrecta.",Toast.LENGTH_SHORT).show();
+                    }
                 }else{
-                    Toast.makeText(LoginActivity.this,"Usuario o contraseña incorrecta..."+response,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Usuario o contraseña incorrecta",Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(LoginActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,"Usuario o contraseña incorrecta..",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LoginActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
@@ -111,15 +127,6 @@ public class LoginActivity extends AppCompatActivity implements Response.ErrorLi
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-    }
-    public void extraer(){
-        edtUsuario=findViewById(R.id.txtusuario);
-        edtPassword=findViewById(R.id.txtclave);
-        String user = edtUsuario.getText().toString();
-        String URL = Valores.getIP_SERVER()+"/APIS/tienda/Consultatendero.php?idusuario="+user;
-        request = Volley.newRequestQueue(this);
-        jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,URL,null,this,this);
-        request.add(jsonObjectRequest);
     }
 
     @Override
