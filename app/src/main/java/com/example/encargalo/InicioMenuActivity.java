@@ -112,7 +112,7 @@ public class InicioMenuActivity extends AppCompatActivity implements Response.Er
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(this,"Ha ocurrido un error"+error.toString(),Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this,"Ha ocurrido un error"+error.toString(),Toast.LENGTH_SHORT).show();
     }
 
     @Override

@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -30,6 +31,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -48,15 +51,17 @@ public class PromocionarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_promocionar);
         pinifecha = findViewById(R.id.printfechainiTextView);
         pfinfecha = findViewById(R.id.printfechafinTextView);
+        sp_promocion_producto = findViewById(R.id.sp_promocion_producto);
 
         final Spinner spinner1 = findViewById(R.id.spinner1);
-        String[] items = new String[]{"Descuento (10%)", "Oferta (2x1)"};
+        String[] items = new String[]{"Descuento (10 por ciento)", "Oferta (2x1)"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         spinner1.setAdapter(adapter);
 
         Button promocionarButton = findViewById(R.id.promocionarButton);
         stockTextNumber = findViewById(R.id.stockTextNumber);
         imagenTextRuta = findViewById(R.id.imagenTextRuta);
+
 
 
         promocionarButton.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +88,18 @@ public class PromocionarActivity extends AppCompatActivity {
         String value_user = prefs.getString("value_user", "vacio");
         cargarProductos(value_user);
 
+        sp_promocion_producto.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                sp_promocion_producto.setSelection(position);
+                Toast.makeText(getApplicationContext(), "El Elemento seleccionado es posición número: "+position +" El String es: "+sp_promocion_producto.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });
+
     }
 
     private  void cargarProductos(String usu){
@@ -94,7 +111,7 @@ public class PromocionarActivity extends AppCompatActivity {
                 if(!response.isEmpty()){
                     List<String> items = new ArrayList<String>();
 
-                    sp_promocion_producto = findViewById(R.id.sp_promocion_producto);
+
 
                     JSONObject jsonObject = null;
                     try {
@@ -170,9 +187,10 @@ public class PromocionarActivity extends AppCompatActivity {
     }
 
     private void enviarPromocion(String IdTienda, String producto, String tipo_promo, String f_ini, String f_fin, String stock, String imagen_ruta){
-        String URL = Valores.getIP_SERVER()+"/APIS/tienda/crearPromocion.php?IdTienda="+IdTienda+"&producto="+producto+"&tipo_promo="+tipo_promo+
+        String URL = Valores.getIP_SERVER()+"/APIS/tienda/crearPromocion.php?IdTienda="+IdTienda+"&producto="+ producto.replace(" ","%20") +"&tipo_promo="+tipo_promo.replace(" ","%20")+
                 "&f_ini="+f_ini+"&f_fin="+f_fin+"&stock="+stock+"&imagen_ruta="+imagen_ruta;
-        Toast.makeText(getApplicationContext(), "asd:::"+URL, Toast.LENGTH_SHORT).show();
+
+       // Toast.makeText(getApplicationContext(), "asd:::"+URL, Toast.LENGTH_SHORT).show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
@@ -186,7 +204,8 @@ public class PromocionarActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                Log.d("eRROR",error.getMessage()+"");
             }
         }){
             @Override

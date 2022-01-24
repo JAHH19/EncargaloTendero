@@ -12,6 +12,11 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:orientation="vertical"></LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -26,34 +31,34 @@
             android:layout_weight="5">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#000000"
-                android:background="#6AE3F3F0"
-                android:textAlignment="center"
                 android:id="@+id/item_descripcion"
-                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="#6AE3F3F0"
                 android:hint="DESCRIPCIÓN"
-                android:layout_weight="4"/>
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="15sp" />
 
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:background="#6AE3F3F0"
-                android:textColor="#000000"
                 android:id="@+id/item_tipo_promocion"
-                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:background="#6AE3F3F0"
                 android:hint="TIPO DE PROMOCION"
-                android:layout_weight="4"/>
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="15sp" />
 
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#6AB81F43" />
+        android:layout_height="10dp"
+        android:orientation="vertical"></LinearLayout>
 
 </LinearLayout>
