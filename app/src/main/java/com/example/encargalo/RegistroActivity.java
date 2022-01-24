@@ -122,6 +122,9 @@ public class RegistroActivity extends AppCompatActivity {
                 }
             }
         }
+        if(sappaterno.()){
+            Toast.makeText(RegistroActivity.this, "Faltan datos!",Toast.LENGTH_SHORT).show();
+            return false;
     }
 
     public void registrar_datos(View View){
@@ -134,6 +137,15 @@ public class RegistroActivity extends AppCompatActivity {
             i.putExtra("tienda",tienda.getText().toString());
             i.putExtra("ruc",ruc.getText().toString());
             i.putExtra("rubro",rubro.getText().toString());
+            if(appaterno.length()==0){Toast.makeText(this, "Debes completar el campo apellido paterno", Toast.LENGTH_SHORT).show();}
+            if(apmaterno.length()==0){Toast.makeText(this, "Debes completar el campo apellido materno", Toast.LENGTH_SHORT).show();}
+            if(nombre.length()==0){Toast.makeText(this, "Debes completar el campo apellido materno", Toast.LENGTH_SHORT).show();}
+            if(identidad.length()==0){Toast.makeText(this, "Debes completar el campo apellido materno", Toast.LENGTH_SHORT).show();}
+            if(celular.length()==0){Toast.makeText(this, "Debes completar el campo apellido materno", Toast.LENGTH_SHORT).show();}
+            if(tienda.length()==0){Toast.makeText(this, "Debes completar el campo apellido materno", Toast.LENGTH_SHORT).show();}
+            if(ruc.length()==0){Toast.makeText(this, "Debes completar el campo apellido materno", Toast.LENGTH_SHORT).show();}
+            if(rubro.length()==0){Toast.makeText(this, "Debes completar el campo apellido materno", Toast.LENGTH_SHORT).show();}
+
             startActivity(i);
     }
 

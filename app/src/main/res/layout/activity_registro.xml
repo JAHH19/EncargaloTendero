@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/include_toolbar"
         android:layout_marginVertical="10dp"
-        android:layout_marginTop="-18dp">
+        android:layout_marginTop="-234dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,7 +43,9 @@
                 android:layout_height="40dp"
                 android:background="@drawable/editex_forma_cuadrada"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                />
+
             <TextView
                 android:id="@+id/textView00112"
                 android:layout_width="wrap_content"
@@ -57,6 +59,7 @@
                 android:background="@drawable/editex_forma_cuadrada"
                 android:ems="10"
                 android:inputType="textPersonName" />
+
             <TextView
                 android:id="@+id/textView00111"
                 android:layout_width="wrap_content"
@@ -70,6 +73,7 @@
                 android:background="@drawable/editex_forma_cuadrada"
                 android:ems="10"
                 android:inputType="textPersonName" />
+
             <TextView
                 android:id="@+id/textView002"
                 android:layout_width="wrap_content"
